@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "node setup-clasp.mjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build && cp gas/main.js dist/main.js && cp appsscript.json dist/appsscript.json",
-    "push": "npm run build && npx clasp push",
-    "deploy": "npm run push && npx clasp deploy"
+    "push": "npx clasp push",
+    "deploy": "npx clasp deploy",
+    "release": "npm run build && npm run push && npm run deploy"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "vite-plugin-singlefile": "^2.3.0"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   }

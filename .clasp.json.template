@@ -1,5 +1,5 @@
 {
-  "scriptId": "17fCF2oerJ21BWCgbdHvlmAu4bcW1ShxjgceVuNkjLZPpfCG5KhE0nfeZ",
+  "scriptId": "{GAS_SCRIPT_ID}",
   "rootDir": "dist",
   "scriptExtensions": [
     ".js",
