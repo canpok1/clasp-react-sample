@@ -1,41 +1,25 @@
 {
   "name": "clasp-react-sample",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
     "setup": "node setup-clasp.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build && cp gas/main.js dist/main.js && cp appsscript.json dist/appsscript.json",
+    "clean": "rm -rf dist && npm run clean --workspaces",
+    "build": "npm run build --workspaces && mkdir -p dist && cp frontend/dist/* dist/ && cp backend/dist/* dist/ && cp appsscript.json dist/appsscript.json",
     "push": "npx clasp push",
     "deploy": "npx clasp deploy",
     "release": "npm run build && npm run push && npm run deploy"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/canpok1/clasp-react-sample.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/canpok1/clasp-react-sample/issues"
-  },
-  "homepage": "https://github.com/canpok1/clasp-react-sample#readme",
   "devDependencies": {
     "@google/clasp": "^3.1.3",
-    "@types/google-apps-script": "^2.0.8",
-    "@types/react": "^19.2.8",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1",
-    "vite-plugin-singlefile": "^2.3.0"
+    "vite": "^7.3.1"
   },
   "dependencies": {
-    "dotenv": "^17.2.3",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "dotenv": "^17.2.3"
   }
 }
