@@ -7,9 +7,11 @@
     "frontend"
   ],
   "scripts": {
-    "setup": "node setup-clasp.mjs",
     "clean": "rm -rf dist && npm run clean --workspaces",
+    "typecheck": "npm run typecheck -w frontend",
     "build": "npm run build --workspaces && mkdir -p dist && cp frontend/dist/* dist/ && cp backend/dist/* dist/ && cp appsscript.json dist/appsscript.json",
+    "dev": "npm run dev -w frontend",
+    "setup-clasp": "node setup-clasp.mjs",
     "push": "npx clasp push",
     "deploy": "npx clasp deploy",
     "release": "npm run build && npm run push && npm run deploy"

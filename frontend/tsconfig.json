@@ -6,7 +6,7 @@
     "moduleResolution": "node",
     "strict": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["google-apps-script"]
+    "types": []
   },
-  "include": ["src", "gas"]
+  "include": ["src"]
 }

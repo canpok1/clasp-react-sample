@@ -17,7 +17,7 @@
 3. 環境の初期設定を行う。
     ```
     npm ci
-    npm run setup
+    npm run setup-clasp
     npx clasp login
     ```
 
