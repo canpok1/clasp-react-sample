@@ -4,13 +4,14 @@ export default function App() {
   const [data, setData] = useState('未取得');
 
   const fetchData = () => {
-    // GAS環境でのみ実行可能
-    if (typeof google !== 'undefined') {
+    if (typeof google === 'undefined') {
+      setData('GASではないためデータ取得不可');
+    } else {
       google.script.run
         .withSuccessHandler((result: string) => {
-          setData(result); // 成功したらReactの状態を更新
+          setData(result);
         })
-        .getMessage(); // GAS側の関数名
+        .getMessage();
     }
   };
 
