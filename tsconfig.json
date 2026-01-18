@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["google-apps-script"]
+  },
+  "include": ["src", "gas"]
+}
